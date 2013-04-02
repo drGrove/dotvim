@@ -1,8 +1,7 @@
-# lrvick's .vim setup #
+# drGrove's .vim setup (Based off lrvick's .vim)#
 
-<http://github.com/lrvick/dotvim>
+<http://github.com/drGrove/dotvim>
 
-![Screenshot](http://github.com/lrvick/dotvim/raw/master/screenshot.png)
 
 ## About ##
 
@@ -51,16 +50,3 @@ setup, is the only IDE I use. (Yes, I just called Vim an IDE. Deal.)
 
   Use at your own risk. You may be eaten by a grue.
 
-  Questions/Comments?
-
-  You can find me on the web via:
-
-  [Email](mailto://lance@lrvick.net) |
-  [Blog](http://lrvick.net) |
-  [Twitter](http://twitter.com/lrvick) |
-  [Facebook](http://facebook.com/lrvick) |
-  [Google+](http://plus.google.com/109278148620470841006) |
-  [YouTube](http://youtube.com/lrvick) |
-  [Last.fm](http://last.fm/user/lrvick) |
-  [LinkedIn](http://linkedin.com/in/lrvick) |
-  [Github](http://github.com/lrvick/)
