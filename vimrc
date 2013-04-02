@@ -17,18 +17,20 @@ set colorcolumn=79
 set spell spelllang=en_us
 set foldmethod=marker
 set rnu
+set t_Co=256
 
 nmap <Left> <<
 nmap <Right> >>
 vmap <Left> <gv
 vmap <Right> >gv
-nmap <Up> [e
-nmap <Down> ]e
-vmap <Up> [egv
-vmap <Down> ]egv
+
 
 "Enable mouse for selecting/changing windows etc.
 set mouse=a
+
+"Remove Mouse Scroll Wheel Click PASTE
+noremap <MiddleMouse> <LeftMouse>
+
 
 "Highlight end of line whitespace.
 "set list
