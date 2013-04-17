@@ -30,7 +30,7 @@ setup, is the only IDE I use. (Yes, I just called Vim an IDE. Deal.)
 1. Clone .vim directory
 
     ```bash
-    git clone https://github.com/lrvick/dotvim.git ~/.vim
+    git clone https://github.com/drGrove/dotvim.git ~/.vim
     ```
 2. Install submodules
 
