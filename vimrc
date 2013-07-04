@@ -16,7 +16,6 @@ set textwidth=79
 set colorcolumn=79
 set spell spelllang=en_us
 set foldmethod=marker
-set rnu
 set t_Co=256
 
 nmap <Left> <<
