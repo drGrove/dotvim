@@ -22,7 +22,10 @@ nmap <Left> <<
 nmap <Right> >>
 vmap <Left> <gv
 vmap <Right> >gv
-
+nmap <Up> [e
+nmap <Down> ]e
+vmap <Up> [egv
+vmap <Down> ]egv
 
 "Enable mouse for selecting/changing windows etc.
 set mouse=a
@@ -68,6 +71,9 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=236
 hi IndentGuidesEven ctermbg=233
+
+" Omni Complete
+set omnifunc=syntaxcomplete#Complete
 
 "Gundo
 nnoremap <silent> <F5> :GundoToggle<CR>
