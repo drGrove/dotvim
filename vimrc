@@ -17,6 +17,7 @@ set colorcolumn=79
 set spell spelllang=en_us
 set foldmethod=marker
 set t_Co=256
+set term=xterm-256color
 
 nmap <Left> <<
 nmap <Right> >>
@@ -51,6 +52,9 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
+
+"javascript libraries
+let g:used_javascript_libs = 'jquery,angularjs,requirejs,underscore'
 
 "rainbow parentheses
 au VimEnter * RainbowParenthesesToggle
@@ -119,3 +123,13 @@ function! FileSize()
     return (bytes / 1024) . "K"
   endif
 endfunction
+
+"Vim Snippets
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
+let g:snipMate.scope_aliases['html'] = 'html,html_minimal'
+let g:snipMate.scope_aliases['javascript'] = 'javascript, javascript.d3, javascript_jquery, javascript-jquery'
+let g:snipMate.scope_aliases['vim'] = 'vim'
+let g:snipMate.scope_aliases['sh'] = 'sh'
+let g:snipMate.scope_aliases['css'] = 'css'

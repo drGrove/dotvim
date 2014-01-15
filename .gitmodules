@@ -57,4 +57,11 @@ path = bundle/closetag
 	url = https://github.com/wavded/vim-stylus.git
 [submodule "bundle/editorconfig"]
 	path = bundle/editorconfig
-	url = git://github.com/editorconfig/editorconfig-vim.git
+    url = git://github.com/editorconfig/editorconfig-vim.git
+
+[submodule "bundle/js-libs"]
+	path = bundle/js-libs
+	url = https://github.com/othree/javascript-libraries-syntax.vim.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
