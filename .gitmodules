@@ -34,9 +34,6 @@ path = bundle/closetag
 [submodule ".vim/bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/Command-T"]
-	path = bundle/Command-T
-	url = https://github.com/vim-scripts/Command-T.git
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
@@ -58,10 +55,15 @@ path = bundle/closetag
 [submodule "bundle/editorconfig"]
 	path = bundle/editorconfig
     url = git://github.com/editorconfig/editorconfig-vim.git
-
 [submodule "bundle/js-libs"]
 	path = bundle/js-libs
 	url = https://github.com/othree/javascript-libraries-syntax.vim.git
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "FuzzyFinder"]
+	path = bundle/FuzzyFinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "L9"]
+	path = bundle/L9
+	url = https://github.com/vim-scripts/L9.git

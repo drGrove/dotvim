@@ -34,6 +34,9 @@ set mouse=a
 "Remove Mouse Scroll Wheel Click PASTE
 noremap <MiddleMouse> <LeftMouse>
 
+"FuzzyFinder
+map <silent> <C-t> :FufCoverageFile<CR>
+let g:fuf_file_exclude='\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 
 "Highlight end of line whitespace.
 "set list
