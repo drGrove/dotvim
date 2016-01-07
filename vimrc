@@ -2,7 +2,7 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-"Basic goodness
+"BASIC goodness
 syntax on
 filetype plugin indent on
 set number
@@ -28,8 +28,17 @@ nmap <Down> ]e
 vmap <Up> [egv
 vmap <Down> ]egv
 
+"Remap jk to <esc>
+inoremap jk <ESC>
+
 "Enable mouse for selecting/changing windows etc.
 set mouse=a
+
+"Remap leader key
+let mapleader = "\<Space>"
+
+"Fix Spelling
+nnoremap <leader>f 1z=
 
 "Remove Mouse Scroll Wheel Click PASTE
 noremap <MiddleMouse> <LeftMouse>
@@ -47,6 +56,13 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_jsl_conf="~/.vim/config/jsl.conf"
+let g:syntastic_html_tidy_ignore_errors = [
+    \ ' proprietary attribute ' ,
+    \ 'trimming empty <', 
+    \ 'unescaped &' , 
+    \ 'is not recognized!', 
+    \ 'discarding unexpected'
+    \ ]
 
 "Solarized color scheme
 set background=dark
