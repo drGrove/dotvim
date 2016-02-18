@@ -165,8 +165,8 @@ endfunction
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
-let g:snipMate.scope_aliases['html'] = 'html,html_minimal'
 let g:snipMate.scope_aliases['javascript'] = 'javascript, javascript.d3, javascript_jquery, javascript-jquery'
 let g:snipMate.scope_aliases['vim'] = 'vim'
 let g:snipMate.scope_aliases['sh'] = 'sh'
 let g:snipMate.scope_aliases['css'] = 'css'
+let g:syntastic_disabled_filetypes=['html']
