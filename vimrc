@@ -175,3 +175,7 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 "Airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
