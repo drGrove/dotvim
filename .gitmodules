@@ -75,10 +75,10 @@ path = bundle/closetag
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "bundle/yajs"]
 	path = bundle/yajs
-	url = git@github.com:othree/yajs.vim.git
+	url = git://github.com/othree/yajs.vim.git
 [submodule "bundle/grunt"]
 	path = bundle/grunt
-	url = git@github.com:mklabs/grunt.vim.git
+	url = git://github.com/mklabs/grunt.vim.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -99,4 +99,4 @@ path = bundle/closetag
 	url = https://github.com/Quramy/vison.git
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
-	url = git@github.com:tpope/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch
