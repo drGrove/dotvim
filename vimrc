@@ -58,9 +58,9 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_jsl_conf="~/.vim/config/jsl.conf"
 let g:syntastic_html_tidy_ignore_errors = [
     \ ' proprietary attribute ' ,
-    \ 'trimming empty <', 
-    \ 'unescaped &' , 
-    \ 'is not recognized!', 
+    \ 'trimming empty <',
+    \ 'unescaped &' ,
+    \ 'is not recognized!',
     \ 'discarding unexpected'
     \ ]
 
@@ -74,7 +74,7 @@ colorscheme solarized
 call togglebg#map("<F6>")
 
 "javascript libraries
-let g:used_javascript_libs = 'jquery,angularjs,requirejs,underscore'
+let g:used_javascript_libs = 'jquery,angularjs,requirejs,underscore,jasmine,angularui,flux,react'
 
 "rainbow parentheses
 au VimEnter * RainbowParenthesesToggle
@@ -129,12 +129,11 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 hi User1 ctermbg=237 ctermfg=248
 hi User2 ctermbg=red   ctermfg=blue
 hi User3 ctermbg=blue  ctermfg=green
-set laststatus=2
 set statusline=         " clear statusline for vim reload
 set statusline+=%1*     " set color to User1
 set statusline+=%f     " filename/path
-"set statusline+=\ %#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=\ %#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%1*     " set color to User1
 set statusline+=%y    " filetype
 set statusline+=\[%{FileSize()}]
@@ -170,3 +169,13 @@ let g:snipMate.scope_aliases['vim'] = 'vim'
 let g:snipMate.scope_aliases['sh'] = 'sh'
 let g:snipMate.scope_aliases['css'] = 'css'
 let g:syntastic_disabled_filetypes=['html']
+
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+"Airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
