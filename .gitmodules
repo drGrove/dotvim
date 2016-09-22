@@ -91,12 +91,15 @@ path = bundle/closetag
 [submodule "bundle/tsuquyomi"]
 	path = bundle/tsuquyomi
 	url = https://github.com/Quramy/tsuquyomi
-[submodule "bundle/typscript-vim"]
-	path = bundle/typscript-vim
-	url = https://github.com/leafgarland/typescript-vim
 [submodule "bundle/vison"]
 	path = bundle/vison
 	url = https://github.com/Quramy/vison.git
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
