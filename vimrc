@@ -1,17 +1,55 @@
-"Load Pathogen and all bundles
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"BASIC goodness
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Other Plugins
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'quramy/vison'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'shougo/unite.vim'
+Plugin 'shougo/vimproc.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-dotenv'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'vim-scripts/Gundo'
+Plugin 'vim-scripts/L9'
+Plugin 'vim-syntastic/syntastic'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" BASIC goodness
 syntax on
 filetype plugin indent on
 set number
 set cursorline
 set autoindent smartindent
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set textwidth=79
 set colorcolumn=79
 set spell spelllang=en_us
@@ -28,43 +66,22 @@ nmap <Down> ]e
 vmap <Up> [egv
 vmap <Down> ]egv
 
-"Remap jk to <esc>
+" Remap jk to <esc>, because who wants to move that far
 inoremap jk <ESC>
 
-"Enable mouse for selecting/changing windows etc.
+" Enable mouse for selecting/changing windows etc.
 set mouse=a
 
-"Remap leader key
+" Remap leader key
 let mapleader = "\<Space>"
 
-"Fix Spelling
+" Fix Spelling
 nnoremap <leader>f 1z=
 
-"Remove Mouse Scroll Wheel Click PASTE
+" Remove Mouse Scroll Wheel Click PASTE
 noremap <MiddleMouse> <LeftMouse>
 
-"FuzzyFinder
-map <silent> <C-t> :FufCoverageFile<CR>
-let g:fuf_file_exclude='\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-
-"Highlight end of line whitespace.
-"set list
-set listchars=trail:.
-
-"Syntastic syntax error checking options
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=0
-let g:syntastic_auto_loc_list=1
-let g:syntastic_jsl_conf="~/.vim/config/jsl.conf"
-let g:syntastic_html_tidy_ignore_errors = [
-    \ ' proprietary attribute ' ,
-    \ 'trimming empty <',
-    \ 'unescaped &' ,
-    \ 'is not recognized!',
-    \ 'discarding unexpected'
-    \ ]
-
-"Solarized color scheme
+" Solarized color scheme
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
@@ -73,59 +90,10 @@ let g:solarized_visibility="high"
 colorscheme solarized
 call togglebg#map("<F6>")
 
-"javascript libraries
-let g:used_javascript_libs = 'jquery,angularjs,requirejs,underscore,jasmine,angularui,flux,react'
-
-"rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-
-"Persistanb undo
-set undodir=~/.vim/undodir
-set undofile
-set undolevels=1000
-set undoreload=10000
-
-"Custom indent-guides config
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd  ctermbg=236
-hi IndentGuidesEven ctermbg=233
-
-" Omni Complete
-set omnifunc=syntaxcomplete#Complete
-
-"Gundo
-nnoremap <silent> <F5> :GundoToggle<CR>
-
-"Nerdtree
+" Nerdtree
 map <silent> <F2> :NERDTreeToggle<CR>
 
-"Tagbar
-nnoremap <silent> <F9> :TagbarToggle<CR>
-
-"Status line of awesome
+" Status line of awesome
 hi User1 ctermbg=237 ctermfg=248
 hi User2 ctermbg=red   ctermfg=blue
 hi User3 ctermbg=blue  ctermfg=green
@@ -160,22 +128,57 @@ function! FileSize()
   endif
 endfunction
 
-"Vim Snippets
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
-let g:snipMate.scope_aliases['javascript'] = 'javascript, javascript.d3, javascript_jquery, javascript-jquery'
-let g:snipMate.scope_aliases['vim'] = 'vim'
-let g:snipMate.scope_aliases['sh'] = 'sh'
-let g:snipMate.scope_aliases['css'] = 'css'
-let g:syntastic_disabled_filetypes=['html']
-
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
-
-"Airline
+" Airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
-" tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+" Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+" Tagbar
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
+" Omni Complete
+set omnifunc=syntaxcomplete#Complete
+
+" Persistent Undo
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" Gundo
+nnoremap <silent> <F5> :GundoToggle<CR>
+
+" Vim-Indent-Lines
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=236
+hi IndentGuidesEven ctermbg=233
+
+" Vison JSON
+autocmd BufRead,BufNewFile package.json Vison
+autocmd BufRead,BufNewFile .bowerrc Vison bowerrc.json
+
