@@ -182,3 +182,9 @@ hi IndentGuidesEven ctermbg=233
 autocmd BufRead,BufNewFile package.json Vison
 autocmd BufRead,BufNewFile .bowerrc Vison bowerrc.json
 
+" Highlight Extra Whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
