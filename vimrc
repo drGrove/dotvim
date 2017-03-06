@@ -22,13 +22,12 @@ Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'quramy/tsuquyomi'
 Plugin 'quramy/vison'
-Plugin 'raimondi/delimitmate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'shougo/unite.vim'
 Plugin 'shougo/vimproc.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'townk/vim-autoclose'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-dotenv'
@@ -39,6 +38,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'vim-scripts/Gundo'
 Plugin 'vim-scripts/L9'
+Plugin 'vim-scripts/delimitMate.vim'
 Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
@@ -96,7 +96,8 @@ colorscheme solarized
 call togglebg#map("<F6>")
 
 " Nerdtree
-map <silent> <F2> :NERDTreeToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup=1
+map <silent> <F2> :NERDTreeTabsToggle<CR>
 
 " Status line of awesome
 hi User1 ctermbg=237 ctermfg=248
