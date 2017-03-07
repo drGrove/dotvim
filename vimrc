@@ -24,7 +24,6 @@ Plugin 'quramy/tsuquyomi'
 Plugin 'quramy/vison'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'shougo/unite.vim'
 Plugin 'shougo/vimproc.vim'
 Plugin 'sjl/gundo.vim'
@@ -40,6 +39,9 @@ Plugin 'vim-scripts/Gundo'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/delimitMate.vim'
 Plugin 'vim-syntastic/syntastic'
+
+" Bundles
+Bundle 'jistr/vim-nerdtree-tabs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
