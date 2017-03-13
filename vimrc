@@ -16,6 +16,7 @@ Plugin 'docunext/closetag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
+Plugin 'janko-m/vim-test'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
@@ -161,6 +162,22 @@ let g:rbpt_colorpairs = [
     \ ['red',         'firebrick3'],
     \ ]
 
+" Split Navigation
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+
+" Tab Navigation
+nnoremap <Leader>j gT
+nnoremap <Leader>k gt
+
+" Open new file
+nnoremap <Leader>o :CtrlP<CR>
+
+" Save File
+nnoremap <Leader>w :w<CR>
+
 " Tagbar
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
@@ -195,3 +212,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Run tests
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
