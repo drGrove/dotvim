@@ -40,6 +40,7 @@ Plugin 'vim-scripts/Gundo'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/delimitMate.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'valloric/youcompleteme'
 
 " Bundles
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -219,3 +220,8 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
+autocmd FileType typescript setlocal completeopt+=menu,preview
