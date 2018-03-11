@@ -21,12 +21,13 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'quramy/tsuquyomi'
+Plugin 'prabirshrestha/async.vim'
+" Plugin 'quramy/tsuquyomi'
+Plugin 'w0rp/ale'
 Plugin 'quramy/vison'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shougo/unite.vim'
-Plugin 'shougo/vimproc.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
@@ -34,13 +35,13 @@ Plugin 'tpope/vim-dotenv'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'valloric/youcompleteme'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'vim-scripts/Gundo'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/delimitMate.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'valloric/youcompleteme'
+" Plugin 'vim-syntastic/syntastic'
 
 " Bundles
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -148,20 +149,20 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+      \ ['brown',       'RoyalBlue3'],
+      \ ['darkgray',    'DarkOrchid3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ]
 
 " Split Navigation
 nnoremap <C-J> <C-W>j
@@ -221,7 +222,17 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
+" ALE
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint']
+\}
+let g:ale_fix_on_save = 1
 " tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
-autocmd FileType typescript setlocal completeopt+=menu,preview
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
+" autocmd FileType typescript setlocal completeopt+=menu,preview
+" if !exists("g:ycm_semantic_triggers")
+"     let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers['typescript'] = ['.']
