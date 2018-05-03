@@ -4,9 +4,9 @@ filetype off                  " required
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
 
 " Other Plugins
 Plugin 'airblade/vim-gitgutter'
@@ -15,33 +15,24 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docunext/closetag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
-Plugin 'janko-m/vim-test'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'prabirshrestha/async.vim'
-" Plugin 'quramy/tsuquyomi'
-Plugin 'w0rp/ale'
-Plugin 'quramy/vison'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'shougo/unite.vim'
-Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-db'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-dotenv'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'valloric/youcompleteme'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'vim-scripts/Gundo'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/delimitMate.vim'
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 " Bundles
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -173,18 +164,18 @@ nnoremap <C-L> <C-W>l
 " Tab Navigation
 nnoremap <Leader>j gT
 nnoremap <Leader>k gt
-
-" Open new file
+"
+"" Open new file
 nnoremap <Leader>o :CtrlP<CR>
-
-" Save File
+"
+"" Save File
 nnoremap <Leader>w :w<CR>
 
 " Tagbar
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " Omni Complete
-set omnifunc=syntaxcomplete#Complete
+"set omnifunc=syntaxcomplete#Complete
 
 " Persistent Undo
 set undodir=~/.vim/undodir
@@ -193,7 +184,7 @@ set undolevels=1000
 set undoreload=10000
 
 " Gundo
-nnoremap <silent> <F5> :GundoToggle<CR>
+"nnoremap <silent> <F5> :GundoToggle<CR>
 
 " Vim-Indent-Lines
 let g:indent_guides_enable_on_vim_startup = 1
@@ -204,8 +195,8 @@ hi IndentGuidesOdd  ctermbg=236
 hi IndentGuidesEven ctermbg=233
 
 " Vison JSON
-autocmd BufRead,BufNewFile package.json Vison
-autocmd BufRead,BufNewFile .bowerrc Vison bowerrc.json
+"autocmd BufRead,BufNewFile package.json Vison
+"autocmd BufRead,BufNewFile .bowerrc Vison bowerrc.json
 
 " Highlight Extra Whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -216,11 +207,11 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Run tests
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+"nmap <silent> <leader>t :TestNearest<CR>
+"nmap <silent> <leader>T :TestFile<CR>
+"nmap <silent> <leader>a :TestSuite<CR>
+"nmap <silent> <leader>l :TestLast<CR>
+"nmap <silent> <leader>g :TestVisit<CR>
 
 " ALE
 let g:ale_fixers = {
@@ -228,6 +219,7 @@ let g:ale_fixers = {
 \   'typescript': ['tslint']
 \}
 let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
 " tsuquyomi
 " let g:tsuquyomi_disable_quickfix = 1
 " let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
