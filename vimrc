@@ -15,33 +15,26 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docunext/closetag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
-Plugin 'janko-m/vim-test'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'maralla/completor-typescript'
+Plugin 'maralla/completor.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'prabirshrestha/async.vim'
-" Plugin 'quramy/tsuquyomi'
-Plugin 'w0rp/ale'
+Plugin 'quramy/tsuquyomi'
 Plugin 'quramy/vison'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shougo/unite.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-dotenv'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'valloric/youcompleteme'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'vim-scripts/Gundo'
-Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/delimitMate.vim'
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 " Bundles
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -183,9 +176,6 @@ nnoremap <Leader>w :w<CR>
 " Tagbar
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
-" Omni Complete
-set omnifunc=syntaxcomplete#Complete
-
 " Persistent Undo
 set undodir=~/.vim/undodir
 set undofile
@@ -202,6 +192,9 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=236
 hi IndentGuidesEven ctermbg=233
+
+" Fix backspace
+set backspace=indent,eol,start
 
 " Vison JSON
 autocmd BufRead,BufNewFile package.json Vison
@@ -229,10 +222,8 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 " tsuquyomi
-" let g:tsuquyomi_disable_quickfix = 1
-" let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
-" autocmd FileType typescript setlocal completeopt+=menu,preview
-" if !exists("g:ycm_semantic_triggers")
-"     let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
+
+" completor
+source $HOME/.vim/completor.vimrc

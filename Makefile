@@ -1,4 +1,4 @@
 setup:
 	git submodule update --init --recursive; \
 	vim +PluginInstall +qall; \
-	./bundle/youcompleteme/install.py --clang-completer --gocode-completer
+		./install_deps.sh
