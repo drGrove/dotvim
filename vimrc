@@ -15,6 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docunext/closetag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
+Plugin 'jamessan/vim-gnupg'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'maralla/completor-typescript'
@@ -135,6 +136,9 @@ endfunction
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+" Powerline
+let g:powerline_pycmd = "py3"
 
 " Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
