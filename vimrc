@@ -17,6 +17,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'maralla/completor-typescript'
 Plugin 'maralla/completor.vim'
@@ -97,6 +98,28 @@ call togglebg#map("<F6>")
 " Nerdtree
 let g:nerdtree_tabs_open_on_console_startup=1
 map <silent> <F2> :NERDTreeTabsToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
 
 " Status line of awesome
 hi User1 ctermbg=237 ctermfg=248
