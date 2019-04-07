@@ -15,7 +15,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docunext/closetag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
+Plugin 'gabrielelana/vim-markdown'
 Plugin 'jamessan/vim-gnupg'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'
@@ -70,6 +72,12 @@ nmap <Up> [e
 nmap <Down> ]e
 vmap <Up> [egv
 vmap <Down> ]egv
+
+" Encodings
+" scriptencoding utf-8
+" set termencoding=utf-8
+" set encoding=utf-8
+" set ambiwidth=double
 
 " Remap jk to <esc>, because who wants to move that far
 inoremap jk <ESC>
@@ -251,6 +259,9 @@ let g:ale_fix_on_save = 1
 " tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
+
+" Align GitHub-flavored Markdown tables
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 " completor
 source $HOME/.vim/completor.vimrc
