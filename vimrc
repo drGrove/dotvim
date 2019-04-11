@@ -30,6 +30,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shougo/unite.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -259,6 +260,9 @@ let g:ale_fix_on_save = 1
 " tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
+
+" python
+let g:syntastic_python_checkers = ['pycodestyle']
 
 " Align GitHub-flavored Markdown tables
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
