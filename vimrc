@@ -11,11 +11,13 @@ Plugin 'VundleVim/Vundle.vim'
 " Other Plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ambv/black'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docunext/closetag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'google/vim-jsonnet'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -261,11 +263,9 @@ let g:ale_fix_on_save = 1
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
 
-" python
-let g:syntastic_python_checkers = ['pycodestyle']
-
 " Align GitHub-flavored Markdown tables
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+
 
 " completor
 source $HOME/.vim/completor.vimrc
