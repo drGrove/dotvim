@@ -10,7 +10,7 @@ which ctags-exuberant 2>&1> /dev/null || {
   fi
 }
 
-python3 -m pip install --user jedi
+python3 -m pip install --user jedi black
 cd bundle/completor.vim/
 npm install -g typescript
 make js
