@@ -263,9 +263,9 @@ nmap <silent> <leader>g :TestVisit<CR>
 " ALE
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tslint']
+\   'typescript': ['eslint']
 \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 " tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker"
